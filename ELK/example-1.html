@@ -91,7 +91,7 @@
                     switch(status){
                     case "GV0":
                         var statuslabel = document.getElementById("statuslabel");
-                        statuslabel.innerHTML = "Arm Up State: " + formatted;
+                        statuslabel.innerHTML = "Armed Status: " + formatted;
                         break;
                     default:
                        break;
@@ -121,11 +121,14 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.1</p>
+            <p id="nodeName">0.2</p>
         </div>
         <div class="buttoncontainer">
             <p id="statuslabel">-</p>
-            <button type="submit" class="style" onclick="sendCommand('', 'GV1', [{'pId': '', 'value': '0'}])"><i>Disarm</i></button>
+            <button type="submit" class="style" 
+                onclick="sendCommand('', 'GV0', [{'pId': '', 'value': '0'}])">
+                <i>Disarm</i>
+            </button>
         </div>
         <div class="onlevelcontainer">
             <p id="onLevelLabel">-</p>
