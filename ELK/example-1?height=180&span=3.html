@@ -88,13 +88,17 @@
                     let statusName = json["status_name"];
                     let value = json["value"];
                     let formatted = json["formatted"];
-                    switch(status){
-                    case "GV0":
-                        var statuslabel = document.getElementById("statuslabel");
-                        statuslabel.innerHTML = "Armed Status: " + formatted;
-                        break;
-                    default:
-                       break;
+                    switch(status) {
+                        case "GV0":
+                            var el = document.getElementById("armedStatus");
+                            el.innerHTML = "Armed Status: " + formatted;
+                            break;
+                        case "GV1":
+                            var el = document.getElementById("armUpState");
+                            el.innerHTML = "Arm Up State: " + formatted;
+                            break;
+                        default:
+                            break;
                     }
                 }
 
@@ -115,16 +119,15 @@
                     let jsonString = JSON.stringify(obj);
                     publishMessage(jsonString);
                 }
-
             </script>
-
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.4</p>
+            <p id="nodeName">0.6</p>
+            <p id="armUpState">Unknown</p>
         </div>
         <div class="buttoncontainer">
-            <p id="statuslabel">-</p>
+            <p id="armedStatus">-</p>
             <button type="submit" class="style" 
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
                 <i>Disarm</i>
@@ -137,9 +140,6 @@
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '2', 'uom': '25'}])">
                 <i>Arm Stay</i>
             </button>
-        </div>
-        <div class="onlevelcontainer">
-            <p id="onLevelLabel">-</p>
         </div>
     </body>
 </html>
