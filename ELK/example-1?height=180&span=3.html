@@ -124,10 +124,10 @@
     <body>
         <div class="namecontainer">
             <p id="nodeName">0.6</p>
-            Arm Up State: <p id="armUpState">Unknown</p>
+            <p>Arm Up State: <div id="armUpState">Unknown</div></p>
         </div>
         <div class="buttoncontainer">
-            <p id="armedStatus">-</p>
+            <p>Armed Status: <div id="armedStatus">Unknown</div></p>
             <button type="submit" class="style" 
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
                 <i>Disarm</i>
