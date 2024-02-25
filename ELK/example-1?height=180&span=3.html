@@ -90,12 +90,10 @@
                     let formatted = json["formatted"];
                     switch(status) {
                         case "GV0":
-                            var el = document.getElementById("armedStatus");
-                            el.innerHTML = "Armed Status: " + formatted;
+                            document.getElementById("armedStatus").innerHTML = formatted;
                             break;
                         case "GV1":
-                            var el = document.getElementById("armUpState");
-                            el.innerHTML = "Arm Up State: " + formatted;
+                            document.getElementById("armUpState").innerHTML = formatted;
                             break;
                         default:
                             break;
@@ -123,7 +121,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.8</p>
+            <p id="nodeName">0.9</p>
         </div>
         <div class="buttoncontainer">
             <p>
