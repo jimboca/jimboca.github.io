@@ -92,16 +92,16 @@
                     let address = json["address"];
                     let status = json["status_id"];
                     let statusName = json["status_name"];
-                    let value = json["value"];
+                    let value = parseInt(json["value"]);
                     let formatted = json["formatted"];
                     switch(status) {
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted;
                             for (i in [0,1,2,4,6]) {
-                                if (i == i) {
+                                if (i == value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
-                                    document.getElementById("armedStatus"+i).style.backgroundColor="green"
+                                    document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
                             }
                            break;
@@ -134,7 +134,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.21</p>
+            <p id="nodeName">0.22</p>
         </div>
         <div class="buttoncontainer">
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
