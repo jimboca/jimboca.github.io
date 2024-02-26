@@ -96,16 +96,15 @@
                     let formatted = json["formatted"];
                     switch(status) {
                         case "GV0":
-                            document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
                             let fs = formated
                             for (i in [0,1,2,4,6]) {
-                                fs += ' (' + i + '=' + value + ')'
-                                document.getElementById("armedStatus").innerHTML = fs
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
+                                fs += ' (' + i + '=' + value + ')'
+                                document.getElementById("armedStatus").innerHTML = fs
                             }
                             break;
                         case "GV1":
@@ -137,7 +136,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.26</p>
+            <p id="nodeName">0.27</p>
         </div>
         <div class="buttoncontainer">
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
