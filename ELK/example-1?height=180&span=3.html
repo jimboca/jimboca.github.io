@@ -96,7 +96,7 @@
                     let formatted = json["formatted"];
                     switch(status) {
                         case "GV0":
-                            document.getElementById("armedStatus").innerHTML = formatted + '-' + value;
+                            document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
                             for (i in [0,1,2,4,6]) {
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
