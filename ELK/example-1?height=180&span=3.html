@@ -127,12 +127,11 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.15</p>
+            <p id="nodeName">0.16</p>
         </div>
         <div class="buttoncontainer">
-            <p class="alignleft" >Armed Status: <span id="armedStatus">Unknown</span></p>
-            <p class="alignright">Arm Up State: <span id="armUpState">Unknown</span></p>
-            <p>
+            <p>Armed Status: <span id="armedStatus">Unknown</span></p>
+            <p>Arm Up State: <span id="armUpState">Unknown</span></p>
             <button type="submit" class="style" 
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
                 <i>Disarm</i>
@@ -145,7 +144,6 @@
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '2', 'uom': '25'}])">
                 <i>Arm Stay</i>
             </button>
-            </p>
         </div>
     </body>
 </html>
