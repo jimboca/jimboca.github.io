@@ -97,9 +97,9 @@
                     switch(status) {
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
-                            let fs = formated + '('
+                            let fs = formated
                             for (i in [6,4,2,1,0]) {
-                                let fs = fs + ' (' + i + '=' + value + ')'
+                                fs += ' (' + i + '=' + value + ')'
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
@@ -137,7 +137,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.23</p>
+            <p id="nodeName">0.24</p>
         </div>
         <div class="buttoncontainer">
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
