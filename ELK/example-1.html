@@ -97,13 +97,16 @@
                     switch(status) {
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
-                            for (i in [0,1,2,4,6]) {
+                            fs = formated + '('
+                            for (i in [6,4,2,1,0]) {
+                                fs = fs + ' (' + i + '=' + value + ')'
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
                             }
+                            document.getElementById("armedStatus").innerHTML = fs
                            break;
                         case "GV1":
                             document.getElementById("armUpState").innerHTML = formatted;
