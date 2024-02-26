@@ -97,14 +97,15 @@
                     switch(status) {
                         case "GV0":
                             let fs = formated
-                            for (i in [0,1,2,4,6]) {
-                                if (i === value) {
+                            let vl = [0,1,2,4,6]
+                            vl.forEach((i) => {
+                                fs += ' (' + i + '=' + value + ')'
+                                document.getElementById("armedStatus").innerHTML = fs
+                                if (i == value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
-                                fs += ' (' + i + '=' + value + ')'
-                                document.getElementById("armedStatus").innerHTML = fs
                             }
                             break;
                         case "GV1":
@@ -139,7 +140,7 @@
             <p id="nodeName">Unknown</p>
         </div>
         <div class="buttoncontainer">
-            <p>0.27 Arm Up State: <span id="armUpState">Unknown</span></p>
+            <p>0.28 Arm Up State: <span id="armUpState">Unknown</span></p>
             <p>Armed Status: <span id="armedStatus">Unknown</span></p>
             <button type="submit" class="style" id="armedStatus0"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
