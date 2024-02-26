@@ -97,10 +97,15 @@
                     switch(status) {
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted;
-                            break;
+                            for (i in [0,1,2,4,6]) {
+                                if value == i {
+                                    document.getElementById("armedStatus"+i).style.backgroundColor="red"
+                                } else {
+                                    document.getElementById("armedStatus"+i).style.backgroundColor="green"
+                                } 
+                           break;
                         case "GV1":
                             document.getElementById("armUpState").innerHTML = formatted;
-                            document.getElementById("armUpState0").style.backgroundColor="lightgrey" 
                             break;
                         default:
                             break;
@@ -128,28 +133,28 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.18</p>
+            <p id="nodeName">0.19</p>
         </div>
         <div class="buttoncontainer">
-            <p>Armed Status: <span id="armedStatus">Unknown</span></p>
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
-            <button type="submit" class="style" id="armUpState0"
+            <p>Armed Status: <span id="armedStatus">Unknown</span></p>
+            <button type="submit" class="style" id="armedStatus0"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
                 <i>Disarmed</i>
             </button>
-            <button type="submit" class="style" id="armUpState1"
+            <button type="submit" class="style" id="armedStatus1"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '1', 'uom': '25'}])">
                 <i>Arm Away</i>
             </button>
-            <button type="submit" class="style" id="armUpState2"
+            <button type="submit" class="style" id="armedStatus2"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '2', 'uom': '25'}])">
                 <i>Arm Stay</i>
             </button>
-            <button type="submit" class="style" id="armUpState4"
+            <button type="submit" class="style" id="armedStatus4"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '4', 'uom': '25'}])">
                 <i>Arm Night</i>
             </button>
-            <button type="submit" class="style" id="armUpState6"
+            <button type="submit" class="style" id="armedStatus6"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '6', 'uom': '25'}])">
                 <i>Arm Vacation</i>
             </button>
