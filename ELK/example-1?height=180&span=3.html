@@ -106,7 +106,7 @@
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
-                            }
+                            });
                             break;
                         case "GV1":
                             document.getElementById("armUpState").innerHTML = formatted;
@@ -140,7 +140,7 @@
             <p id="nodeName">Unknown</p>
         </div>
         <div class="buttoncontainer">
-            <p>0.28 Arm Up State: <span id="armUpState">Unknown</span></p>
+            <p>0.29 Arm Up State: <span id="armUpState">Unknown</span></p>
             <p>Armed Status: <span id="armedStatus">Unknown</span></p>
             <button type="submit" class="style" id="armedStatus0"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '0', 'uom': '25'}])">
