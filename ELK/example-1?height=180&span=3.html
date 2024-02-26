@@ -98,15 +98,15 @@
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
                             let fs = formated
-                            for (i in [6,4,2,1,0]) {
+                            for (i in [0,1,2,4,6]) {
                                 fs += ' (' + i + '=' + value + ')'
+                                document.getElementById("armedStatus").innerHTML = fs
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
                                 }
                             }
-                            document.getElementById("armedStatus").innerHTML = fs
                             break;
                         case "GV1":
                             document.getElementById("armUpState").innerHTML = formatted;
@@ -137,7 +137,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.25</p>
+            <p id="nodeName">0.26</p>
         </div>
         <div class="buttoncontainer">
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
