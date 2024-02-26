@@ -97,9 +97,9 @@
                     switch(status) {
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted + ' (' + value + ')';
-                            fs = formated + '('
+                            let fs = formated + '('
                             for (i in [6,4,2,1,0]) {
-                                fs = fs + ' (' + i + '=' + value + ')'
+                                let fs = fs + ' (' + i + '=' + value + ')'
                                 if (i === value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
