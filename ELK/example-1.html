@@ -98,7 +98,7 @@
                         case "GV0":
                             document.getElementById("armedStatus").innerHTML = formatted;
                             for (i in [0,1,2,4,6]) {
-                                if value == i {
+                                if (i == i) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="green"
@@ -134,7 +134,7 @@
         </head>
     <body>
         <div class="namecontainer">
-            <p id="nodeName">0.20</p>
+            <p id="nodeName">0.21</p>
         </div>
         <div class="buttoncontainer">
             <p>Arm Up State: <span id="armUpState">Unknown</span></p>
