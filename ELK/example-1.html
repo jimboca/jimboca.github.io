@@ -96,10 +96,9 @@
                     let formatted = json["formatted"];
                     switch(status) {
                         case "GV0":
-                            document.getElementById("armedStatus").innerHTML = fs
+                            document.getElementById("armedStatus").innerHTML = formatted
                             let vl = [0,1,2,4,6]
                             vl.forEach((i) => {
-                                document.getElementById("armedStatus").innerHTML = fs
                                 if (i == value) {
                                     document.getElementById("armedStatus"+i).style.backgroundColor="red"
                                 } else {
