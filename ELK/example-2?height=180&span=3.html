@@ -139,12 +139,14 @@
                     switch(status) {
                         case "GV0":
                             /* document.getElementById("armedStatus").innerHTML = formatted */
-                            let vl = [0,1,2,4,6]
+                            /* We don't have a button for Stay Instant, or Night Instant
+                               So if those are set, show the simple one */
+                            let vl = [[0,0],[1,1],[2,2],[3,2],[4,4][5,4],[6,6]]
                             vl.forEach((i) => {
-                                if (i == value) {
-                                    document.getElementById("armedStatus"+i).style.backgroundColor="red"
+                                if (i[0] == value) {
+                                    document.getElementById("armedStatus"+i[1]).style.backgroundColor="red"
                                 } else {
-                                    document.getElementById("armedStatus"+i).style.backgroundColor="lightgrey"
+                                    document.getElementById("armedStatus"+i[1]).style.backgroundColor="lightgrey"
                                 }
                             });
                             break;
@@ -188,19 +190,19 @@
             </button>
             <button type="submit" class="button-23" id="armedStatus1"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '1', 'uom': '25'}])">
-                <i>Arm Away</i>
+                <i>Away</i>
             </button>
             <button type="submit" class="button-23" id="armedStatus2"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '2', 'uom': '25'}])">
-                <i>Arm Stay</i>
+                <i>Stay</i>
             </button>
             <button type="submit" class="button-23" id="armedStatus4"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '4', 'uom': '25'}])">
-                <i>Arm Night</i>
+                <i>Night</i>
             </button>
             <button type="submit" class="button-23" id="armedStatus6"
                 onclick="sendCommand('', 'SET_ARMED_STATUS', [{'pId': '', 'value': '6', 'uom': '25'}])">
-                <i>Arm Vacation</i>
+                <i>Vacation</i>
             </button>
         </div>
     </body>
